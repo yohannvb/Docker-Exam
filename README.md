@@ -1,7 +1,25 @@
-# Docker GHA Training
+# 🐳 Docker GHA Training Project
 
-The goal of this training is to learn how to use Docker and GitHub Actions to build, test and deploy a simple web application. In this training, we will use a simple web application written in Python and Flask.
+Ce projet est un exemple complet de containerisation et d’automatisation CI/CD pour une application Python avec base de données PostgreSQL.
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🚀 Fonctionnalités
+
+- 📦 Application Python containerisée avec Docker
+- 🗄️ Base de données PostgreSQL sans persistance (volatile, pour dev/test)
+- 🐘 Démarrage synchronisé avec PostgreSQL (attente native en Python)
+- 🔒 Utilisation sécurisée des secrets via Docker secrets (pas d'env vars sensibles)
+- 🔁 Deux workflows GitHub Actions :
+  - `build-and-test`: installe et teste le projet à chaque push/PR
+  - `docker-build-push`: construit et publie une image Docker sur `main` uniquement
+- ♻️ Image Docker optimisée : légère, non-root, avec cache et sécurité
+
+---
+
+## 🛠️ Lancer le projet en local
+
+### 1. Démarrer via Docker Compose
+
+```bash
+docker compose up --build
