@@ -12,6 +12,8 @@ RUN apt-get update \
        curl \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install pytest
+
 # Create a non-root user
 RUN useradd -m -u 1000 appuser
 

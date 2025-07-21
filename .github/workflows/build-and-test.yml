@@ -28,6 +28,8 @@ jobs:
           poetry config virtualenvs.create false
           poetry install --only main
 
-      - name: Run tests
+      - name: Run tests inside Docker image
         run: |
-          pytest
+          docker build -t myapp:test .
+          docker run --rm myapp:test pytest
+
