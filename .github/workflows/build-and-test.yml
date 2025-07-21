@@ -31,5 +31,5 @@ jobs:
       - name: Run tests inside Docker image
         run: |
           docker build -t myapp:test .
-          docker run --rm myapp:test pytest
+          docker run --rm --entrypoint pytest myapp:test
 
